@@ -13,7 +13,7 @@ export const signIn = async (req, res) => {
             return res.status(400).json({ message: "Invalid Credentials"})
         } else {
             const token = jwt.sign({email: existingUser?.email, password: existingUser?.password}, 'test', {expiresIn: '1h'});
-            res.status(200).json({ result: existingUser, token })
+            res.status(200).json({ result: existingUser, token });
         }
     } catch (err) {
         res.status(500).json({ message: "Something went wrong " });

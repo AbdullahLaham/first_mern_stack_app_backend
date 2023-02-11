@@ -8,7 +8,7 @@ const auth = async (req, res, next) => {
         const isCustomAuth = token.length < 500; // is the token is our own token (not from googleAuth)
         let decodedData;
         if (token && isCustomAuth) {
-            decodedData = jwt.verify(token, 'test')
+            decodedData = jwt.verify(token, 'test');
             req.userId = decodedData?.exp;
 
         } else { // token is from googleAtuh

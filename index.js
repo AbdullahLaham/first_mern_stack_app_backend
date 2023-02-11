@@ -14,7 +14,7 @@ app.use(bodyParser.json({"limit": "30mb", extended: true})); // 30mb because we 
 app.use(bodyParser.urlencoded({"limit": "30mb", extended: true}));
 app.use(cors());
 // localhost:5000/posts
-app.use('/posts', postRoutes)
+app.use('/posts', postRoutes);
 app.use('/users', userRoutes);
 app.get('/', (req, res) => res.send("App is running"))
 const CONNECTION_URL = "mongodb+srv://abdullah:9Fu2XGokRTlpLbv5@cluster0.bmyhu08.mongodb.net/?retryWrites=true&w=majority"
